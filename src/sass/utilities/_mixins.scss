@@ -1,0 +1,59 @@
+@use './variables' as *;
+
+// placeholder selectors
+%h1 {
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: $fs-h1;
+  line-height: 3.75rem;
+}
+
+%h2 {
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: $fs-h2;
+  line-height: 3.25rem;
+}
+
+%h3 {
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: $fs-h3;
+  line-height: 2.625rem;
+}
+
+%h4 {
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: $fs-h4;
+  line-height: 2.275rem;
+}
+
+%h5 {
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: $fs-h5;
+  line-height: 2.375rem;
+}
+
+%h6 {
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: $fs-h6;
+  line-height: 1.875rem;
+}
+
+%p {
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: $fs-h6;
+  line-height: 1.5rem;
+  color: $clr-black-900;
+}
