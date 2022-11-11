@@ -11,6 +11,6 @@
     <script src="./assets/js/app.js" defer></script>
   </head>
   <body>
-    {{ content | safe }}
+    {% include "header.html" %} {{ content | safe }} {% include "footer.html" %}
   </body>
 </html>
