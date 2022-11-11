@@ -1,124 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-    <meta name="description" content="Change this!" />
-    <title>Starter Page</title>
+---
+layout: 'base.html'
+title: 'CHANGE ME'
+description: 'SAMPLE DESCRIPTION THAT NEEDS TO BE CHANGED'
+---
 
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="./assets/js/app.js" defer></script>
-  </head>
-  <body>
-    <div id="backdrop"></div>
+<div id="backdrop"></div>
 
-    <!-- HEADER  -->
-    <header>
-      <div id="logo" class="logo">
-        <p>Starter Kit</p>
+<!-- HEADER  -->
+<header>
+  <div id="logo" class="logo">
+    <p>Starter Kit</p>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav aria-label="primary navigation">
+    <div id="hamburger" class="mobile-nav-button">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul>
+      <li><a href="">Home</a></li>
+      <li><a href="">About</a></li>
+      <li><a href="">Services</a></li>
+      <li><a href="">Testimonials</a></li>
+      <li><a href="">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- MAIN -->
+<main>
+  <h1>The Starter Kit!</h1>
+  <h2>Follow the steps below to get started</h2>
+  <ol class="start">
+    <li>Add the colours and font styles to the variables partial</li>
+    <li>Create temporary variables for text in the mixins partial</li>
+    <li>Tweak the settings in the header partial to achieve the desired header</li>
+    <li>Update the meta and title tages in the head of the index page</li>
+    <li>Do the markdown and styling for the header and footer first</li>
+    <li>Then clear the main in index.html and begin! Good luck!</li>
+  </ol>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <!-- LOGO & TEXT -->
+    <div class="business section">
+      <h4>Starter Kit/Logo</h4>
+      <p>Either have text or a logo above, put some additional text here if you so desire</p>
+    </div>
+
+    <div class="information">
+      <!-- SITEMAP -->
+      <div class="section">
+        <h4>Sitemap</h4>
+        <nav aria-label="secondary navigation">
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Testimonials</a></li>
+            <li><a href="">Contact</a></li>
+          </ul>
+        </nav>
       </div>
 
-      <!-- NAVIGATION -->
-      <nav aria-label="primary navigation">
-        <div id="hamburger" class="mobile-nav-button">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+      <!-- SERVICES -->
+      <div class="section">
+        <h4>Services</h4>
         <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="">About</a></li>
-          <li><a href="">Services</a></li>
-          <li><a href="">Testimonials</a></li>
-          <li><a href="">Contact</a></li>
+          <li><a href="">Service 1</a></li>
+          <li><a href="">Service 2</a></li>
+          <li><a href="">Service 3</a></li>
+          <li><a href="">Service 4</a></li>
         </ul>
-      </nav>
-    </header>
-
-    <main>
-      <h1>The Starter Kit!</h1>
-      <h2>Follow the steps below to get started</h2>
-      <ol class="start">
-        <li>Add the colours and font styles to the variables partial</li>
-        <li>Create temporary variables for text in the mixins partial</li>
-        <li>Tweak the settings in the header partial to achieve the desired header</li>
-        <li>Update the meta and title tages in the head of the index page</li>
-        <li>Do the markdown and styling for the header and footer first</li>
-        <li>Then clear the main in index.html and begin! Good luck!</li>
-      </ol>
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-      <div class="container">
-        <!-- LOGO & TEXT -->
-        <div class="business section">
-          <h4>Starter Kit/Logo</h4>
-          <p>Either have text or a logo above, put some additional text here if you so desire</p>
-        </div>
-
-        <div class="information">
-          <!-- SITEMAP -->
-          <div class="section">
-            <h4>Sitemap</h4>
-            <nav aria-label="secondary navigation">
-              <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Services</a></li>
-                <li><a href="">Testimonials</a></li>
-                <li><a href="">Contact</a></li>
-              </ul>
-            </nav>
-          </div>
-
-          <!-- SERVICES -->
-          <div class="section">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="">Service 1</a></li>
-              <li><a href="">Service 2</a></li>
-              <li><a href="">Service 3</a></li>
-              <li><a href="">Service 4</a></li>
-            </ul>
-          </div>
-
-          <!-- CONTACT -->
-          <div class="section">
-            <h4>Contact</h4>
-            <ul>
-              <li>
-                <h5>Address</h5>
-                <p>First Address Line</p>
-                <p>City, County, Postcode</p>
-              </li>
-              <li>
-                <h5>Telephone</h5>
-                <p>01264 123456</p>
-              </li>
-              <li>
-                <h5>Email</h5>
-                <p>smallbusiness@gmail.com</p>
-              </li>
-              <li class="socials">
-                <h5>Follow Us</h5>
-                <div class="icons">
-                  <img src="./assets/svg/facebook.svg" alt="Facebook" />
-                  <img src="./assets/svg/twitter.svg" alt="Twitter" />
-                  <img src="./assets/svg/instagram.svg" alt="Instagram" />
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
 
-      <!-- CREDIT -->
-      <div class="credit">
-        <p>Designed and custom coded by Ethan Hawes</p>
+      <!-- CONTACT -->
+      <div class="section">
+        <h4>Contact</h4>
+        <ul>
+          <li>
+            <h5>Address</h5>
+            <p>First Address Line</p>
+            <p>City, County, Postcode</p>
+          </li>
+          <li>
+            <h5>Telephone</h5>
+            <p>01264 123456</p>
+          </li>
+          <li>
+            <h5>Email</h5>
+            <p>smallbusiness@gmail.com</p>
+          </li>
+          <li class="socials">
+            <h5>Follow Us</h5>
+            <div class="icons">
+              <img src="./assets/svg/facebook.svg" alt="Facebook" />
+              <img src="./assets/svg/twitter.svg" alt="Twitter" />
+              <img src="./assets/svg/instagram.svg" alt="Instagram" />
+            </div>
+          </li>
+        </ul>
       </div>
-    </footer>
-  </body>
-</html>
+    </div>
+  </div>
+
+  <!-- CREDIT -->
+  <div class="credit">
+    <p>Designed and custom coded by Ethan Hawes</p>
+  </div>
+</footer>
