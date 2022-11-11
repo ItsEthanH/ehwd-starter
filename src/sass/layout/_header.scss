@@ -14,7 +14,7 @@ header {
   color: $clr-black-100;
   width: 100%;
   z-index: 2;
-  transition: $nav-animation-duration / 2;
+  transition: calc($nav-animation-duration / 2);
 
   ul {
     visibility: hidden;
@@ -112,10 +112,10 @@ header {
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transition: $nav-animation-duration/2 ease-in-out;
-    -moz-transition: $nav-animation-duration/2 ease-in-out;
-    -o-transition: $nav-animation-duration/2 ease-in-out;
-    transition: $nav-animation-duration/2 ease-in-out;
+    -webkit-transition: calc($nav-animation-duration/2) ease-in-out;
+    -moz-transition: calc($nav-animation-duration/2) ease-in-out;
+    -o-transition: calc($nav-animation-duration/2) ease-in-out;
+    transition: calc($nav-animation-duration/2) ease-in-out;
   }
 
   span:nth-child(1) {
