@@ -7,10 +7,12 @@
     <meta name="description" content="{{ description }}" />
     <title>{{ title }}</title>
 
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <script src="./assets/js/app.js" defer></script>
   </head>
   <body>
-    {% include "header.html" %} {{ content | safe }} {% include "footer.html" %}
+    {% include "header.html" %}
+    <main id="main">{{ content | safe }}</main>
+    {% include "footer.html" %}
   </body>
 </html>
