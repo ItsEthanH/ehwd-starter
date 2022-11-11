@@ -14,7 +14,7 @@ header {
   color: $clr-black-100;
   width: 100%;
   z-index: 2;
-  transition: $nav-animation-duration / 2;
+  transition: calc($nav-animation-duration / 2);
 
   ul {
     visibility: hidden;
