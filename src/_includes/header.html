@@ -13,11 +13,17 @@
       <span></span>
     </div>
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="">Services</a></li>
-      <li><a href="">Testimonials</a></li>
-      <li><a href="">Contact</a></li>
+      <li><a class="{{ 'active' if '' == page.fileSlug }}" href="/">Home</a></li>
+      <li><a class="{{ 'active' if 'about' == page.fileSlug }}" href="/about">About</a></li>
+      <li>
+        <a class="{{ 'active' if 'services' == page.fileSlug }}" href="/services">Services</a>
+      </li>
+      <li>
+        <a class="{{ 'active' if 'testimonials' == page.fileSlug }}" href="/testimonials"
+          >Testimonials</a
+        >
+      </li>
+      <li><a class="{{ 'active' if 'contact' == page.fileSlug }}" href="/contact">Contact</a></li>
     </ul>
   </nav>
 </header>
