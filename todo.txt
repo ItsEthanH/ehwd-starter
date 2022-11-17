@@ -1,0 +1,3 @@
+1) fix footer alignment
+2) rethink text placeholders
+3) dark mode

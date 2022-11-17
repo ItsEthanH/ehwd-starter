@@ -45,7 +45,7 @@
         flex-direction: column;
         gap: calc(36 / 16) * 1rem;
         height: 100%;
-        padding-top: calc(76 / 16) * 1rem;
+        padding-top: calc(96 / 16) * 1rem;
         padding-right: calc(24 / 16) * 1rem;
       }
 
@@ -246,7 +246,7 @@
       a {
         position: relative;
         font-size: calc(19 / 16) * 1rem;
-        color: $clr-black-900;
+        color: $neutralDark;
         z-index: 1;
         transition: color 0.3s;
       }
@@ -266,22 +266,22 @@
     }
 
     &.scrolled {
-      background: black;
+      background: $neutralDark;
 
       &,
       & * {
       }
 
       .logo svg {
-        fill: $clr-black-100;
+        fill: $neutralLight;
       }
 
       nav a {
-        color: $clr-black-100;
+        color: $neutralLight;
       }
 
       #dark-mode-toggle svg {
-        fill: $clr-black-100;
+        fill: $neutralLight;
       }
     }
   }
@@ -293,7 +293,7 @@
 @media only screen and (min-width: 0rem) {
   header nav a.active {
     // for specificity
-    color: red;
+    color: $primary;
   }
 
   #dark-mode-toggle {
