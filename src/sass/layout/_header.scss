@@ -1,192 +1,17 @@
 @use '../utilities' as *;
 @use '../base/' as *;
 
-// header {
-//   // adjust these based on what type of header you need
-//   background: grey;
-//   position: sticky; // or fixed
-//   top: 0;
-
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 1.5rem;
-//   color: $clr-black-100;
-//   width: 100%;
-//   z-index: 2;
-//   transition: calc($nav-animation-duration / 2);
-
-//   ul {
-//     visibility: hidden;
-//     z-index: 2;
-//     position: absolute;
-//     top: 0;
-//     right: -120%;
-//     background: $clr-black-900;
-//     padding: 5rem 1rem;
-//     padding-bottom: 0;
-//     height: 100vh;
-//     width: 60%;
-//     transition: $nav-animation-duration;
-//   }
-
-//   li {
-//     @extend %h5;
-//     text-align: right;
-//     margin: 1rem 0;
-//   }
-
-//   a {
-//     color: $clr-black-100;
-//     text-decoration: none;
-//   }
-
-//   // on scroll, change background
-//   &.scrolled {
-//     background: $clr-black-900;
-//   }
-
-//   // when open, dim the logo and show the menu
-//   &.open {
-//     .logo {
-//       opacity: 0.5;
-//     }
-
-//     ul {
-//       visibility: initial;
-//       right: 0;
-//     }
-//   }
-
-//   // change from side open to normal header
-//   @media only screen and (min-width: $bp-small-desktop) {
-//     padding: 0.5rem 1.5rem;
-
-//     ul {
-//       visibility: visible;
-//       position: static;
-//       display: flex;
-//       align-items: center;
-//       gap: 3rem;
-//       right: 0;
-//       height: fit-content;
-//       width: fit-content;
-//       background: transparent;
-//       padding: 0;
-//       transition: none;
-
-//       li {
-//         font-size: $fs-h6;
-//       }
-//     }
-//   }
-// }
-
-// mobile navigaton hamburger button
-// a CSS-only modification of https://codepen.io/designcouch/pen/ExvwPY. thank you Jesse :)
-// .mobile-nav-button {
-//   width: 2.25rem;
-//   height: 1.8rem;
-//   position: relative;
-//   -webkit-transform: rotate(0deg);
-//   -moz-transform: rotate(0deg);
-//   -o-transform: rotate(0deg);
-//   transform: rotate(0deg);
-//   -webkit-transition: $nav-animation-duration ease-in-out;
-//   -moz-transition: $nav-animation-duration ease-in-out;
-//   -o-transition: $nav-animation-duration ease-in-out;
-//   transition: $nav-animation-duration ease-in-out;
-//   cursor: pointer;
-//   z-index: 3;
-
-//   span {
-//     display: block;
-//     position: absolute;
-//     height: 0.3rem;
-//     width: 100%;
-//     background: $clr-black-100;
-//     border-radius: 0.75rem;
-//     opacity: 1;
-//     left: 0;
-//     -webkit-transform: rotate(0deg);
-//     -moz-transform: rotate(0deg);
-//     -o-transform: rotate(0deg);
-//     transform: rotate(0deg);
-//     -webkit-transition: calc($nav-animation-duration/2) ease-in-out;
-//     -moz-transition: calc($nav-animation-duration/2) ease-in-out;
-//     -o-transition: calc($nav-animation-duration/2) ease-in-out;
-//     transition: calc($nav-animation-duration/2) ease-in-out;
-//   }
-
-//   span:nth-child(1) {
-//     top: 0;
-//   }
-
-//   span:nth-child(2),
-//   span:nth-child(3) {
-//     top: 0.75rem;
-//   }
-
-//   span:nth-child(4) {
-//     top: 1.5rem;
-//   }
-
-//   .open & {
-//     span {
-//       background: $clr-black-100;
-//     }
-
-//     span:nth-child(1) {
-//       top: 0.75rem;
-//       width: 0%;
-//       left: 50%;
-//     }
-
-//     span:nth-child(2) {
-//       -webkit-transform: rotate(45deg);
-//       -moz-transform: rotate(45deg);
-//       -o-transform: rotate(45deg);
-//       transform: rotate(45deg);
-//     }
-
-//     span:nth-child(3) {
-//       -webkit-transform: rotate(-45deg);
-//       -moz-transform: rotate(-45deg);
-//       -o-transform: rotate(-45deg);
-//       transform: rotate(-45deg);
-//     }
-
-//     span:nth-child(4) {
-//       top: 0.75rem;
-//       width: 0%;
-//       left: 50%;
-//     }
-//   }
-
-//   @media only screen and (min-width: $bp-small-desktop) {
-//     display: none;
-//   }
-// }
-
-// #backdrop {
-//   display: none;
-//   position: fixed;
-//   background: rgba(0, 0, 0, 0.5);
-//   width: 100%;
-//   height: 100vh;
-//   z-index: 1;
-//   transition: $nav-animation-duration;
-// }
-
-@media only screen and (min-width: 0rem) {
+/*-- -------------------------- -->
+<---        Mobile Header       -->
+<--- -------------------------- -*/
+@media only screen and (max-width: 64rem) {
   header {
-    background: white;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
     position: sticky;
     top: 0;
     width: 100%;
     height: auto;
+    background: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
     .container {
       padding: calc(13 / 16) * 1rem;
@@ -207,28 +32,27 @@
       position: fixed;
       top: 0;
       right: 0;
+      height: 100%;
+      width: 0;
+      padding-top: 0;
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       background-color: #fff;
-      height: 100%;
       z-index: 10;
-
-      padding-top: 0;
-      width: 0;
       transition: width 0.3s;
 
       ul {
         display: flex;
         flex-direction: column;
+        gap: calc(36 / 16) * 1rem;
         height: 100%;
         padding-top: calc(76 / 16) * 1rem;
         padding-right: calc(24 / 16) * 1rem;
-        gap: calc(36 / 16) * 1rem;
       }
 
       li {
+        opacity: 0;
         text-align: right;
         transform-style: preserve-3d;
-        opacity: 0;
         transform: translateY(-7/16em) rotateX(00deg);
         transition: opacity 0.5s, transform 0.5s;
 
@@ -252,29 +76,27 @@
 
     #hamburger {
       position: absolute;
+      top: 50%;
       right: 0;
+      display: block;
       border: none;
+      padding: 0;
       height: calc(48 / 16) * 1rem;
       width: calc(48 / 16) * 1rem;
-      z-index: 100;
-      display: block;
       background: transparent;
-      padding: 0;
-      top: 50%;
       transform: translateY(-50%);
       transition: top 0.3s;
+      z-index: 100;
       cursor: pointer;
 
       span {
+        position: absolute;
+        display: block;
+        left: 50%;
         height: 2px;
         width: calc(24 / 16) * 1rem;
         background-color: #000;
-        display: block;
-        position: absolute;
-        left: 50%;
         transform: translateX(-50%);
-
-        //transition properties
         transition: background-color 0.3s;
 
         &:before,
@@ -282,9 +104,9 @@
           content: '';
           position: absolute;
           display: block;
+          left: 0;
           height: 2px;
           width: 100%;
-          left: 0;
           background: #000;
           opacity: 1;
         }
@@ -301,57 +123,15 @@
       }
     }
 
-    #dark-mode-toggle {
-      display: block;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      right: calc(60 / 16) * 1rem;
-      width: calc(48 / 16) * 1rem;
-      height: calc(48 / 16) * 1rem;
-      background: transparent;
-      border: none;
-      overflow: hidden;
-      padding: 0;
-      cursor: pointer;
-
-      //center image inside button
-      img,
-      svg {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: calc(25 / 16) * 1rem;
-        height: calc(25 / 16) * 1rem;
-        pointer-events: none;
-      }
-
-      .moon {
-        z-index: 5;
-        // Transition properties
-        transition: transform 0.3s, opacity 0.3s, fill 0.3s;
-        fill: #000; // --> change the color of the moon graphic based ont he background being lighter or darker
-      }
-
-      .sun {
-        z-index: 4;
-        // Transition property
-        transform: translate(-50%, 100%);
-        opacity: 0;
-        transition: transform 0.3s, opacity 0.3s;
-      }
-    }
-
     &.open {
       #hamburger {
         span {
           background-color: transparent;
           &:before,
           &:after {
-            width: 100%;
-            left: 50%;
             top: 50%;
+            left: 50%;
+            width: 100%;
           }
 
           &:before {
@@ -392,6 +172,179 @@
       background: rgba(0, 0, 0, 0.5);
       height: 100vh;
       width: 100vw;
+    }
+  }
+}
+
+/*-- -------------------------- -->
+<---        Tablet Header       -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 568px) {
+  header {
+    .container {
+      padding: 2rem;
+    }
+    #dark-mode-toggle {
+      right: calc(76 / 16) * 1rem;
+    }
+    #hamburger {
+      right: calc(16 / 16) * 1rem;
+    }
+  }
+}
+
+/*-- -------------------------- -->
+<---       Desktop Header       -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 64rem) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: calc(100 / 16) * 1rem;
+    padding: 0;
+    z-index: 200000;
+    transition: 0.3s;
+
+    .background-color-div {
+      height: 100%;
+      box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      max-width: 75rem;
+      margin: 0 auto;
+      padding: calc(32 / 16) * 1rem;
+    }
+
+    .logo {
+      width: auto;
+      margin-right: auto;
+    }
+
+    nav {
+      ul {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0;
+      }
+
+      li {
+        margin-left: calc(30 / 16) * 1rem;
+        padding-top: 0.1875em;
+        list-style: none;
+      }
+
+      a {
+        position: relative;
+        font-size: calc(19 / 16) * 1rem;
+        color: $clr-black-900;
+        z-index: 1;
+        transition: color 0.3s;
+      }
+    }
+
+    #dark-mode-toggle {
+      position: relative;
+      top: auto;
+      right: auto;
+      transform: none;
+      margin-left: 1.875em;
+      margin-bottom: 0em;
+    }
+
+    #hamburger {
+      display: none;
+    }
+
+    &.scrolled {
+      background: black;
+
+      &,
+      & * {
+      }
+
+      .logo svg {
+        fill: $clr-black-100;
+      }
+
+      nav a {
+        color: $clr-black-100;
+      }
+
+      #dark-mode-toggle svg {
+        fill: $clr-black-100;
+      }
+    }
+  }
+}
+
+/*-- -------------------------- -->
+<---    Shared Header Styles    -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  .active {
+    color: red;
+  }
+
+  #dark-mode-toggle {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: calc(60 / 16) * 1rem;
+    width: calc(48 / 16) * 1rem;
+    height: calc(48 / 16) * 1rem;
+    background: transparent;
+    border: none;
+    overflow: hidden;
+    padding: 0;
+    cursor: pointer;
+
+    img,
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: calc(25 / 16) * 1rem;
+      height: calc(25 / 16) * 1rem;
+      pointer-events: none;
+    }
+
+    .moon {
+      z-index: 5;
+      transition: transform 0.3s, opacity 0.3s, fill 0.3s;
+      fill: #000; // --> change the color of the moon graphic based on the background being lighter or darker
+    }
+
+    .sun {
+      z-index: 4;
+      transform: translate(-50%, 100%);
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+  }
+
+  body.dark-mode {
+    #dark-mode-toggle {
+      .sun {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+
+      .moon {
+        transform: translate(-50%, -150%);
+        opacity: 0;
+      }
     }
   }
 }
