@@ -1,0 +1,19 @@
+/*-- -------------------------- -->
+<---          Toggle            -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0rem) {
+  body.dark-mode {
+    #dark-mode-toggle {
+      .sun {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+
+      .moon {
+        transform: translate(-50%, -150%);
+        opacity: 0;
+      }
+    }
+  }
+}
