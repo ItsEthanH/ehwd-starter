@@ -291,7 +291,8 @@
 <---    Shared Header Styles    -->
 <--- -------------------------- -*/
 @media only screen and (min-width: 0rem) {
-  .active {
+  header nav a.active {
+    // for specificity
     color: red;
   }
 
