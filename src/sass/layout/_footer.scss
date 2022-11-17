@@ -11,6 +11,8 @@
     /* 60px - 100px top and bottom */
     padding: clamp(3.75em, 7.82vw, 6.25em) calc(16 / 16) * 1em;
     background-color: $clr-black-900;
+    z-index: -1;
+    position: relative;
 
     .container {
       width: 100%;
@@ -165,7 +167,7 @@
 
     .contact-li {
       list-style: none;
-      margin-bottom: (0 / 16) * 1em;
+      margin-bottom: calc(0 / 16) * 1em;
       &:last-of-type {
         margin-bottom: 0;
       }
