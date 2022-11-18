@@ -1,5 +1,4 @@
 <header>
-  <div aria-hidden="true" class="background-color-div"></div>
   <div class="container">
     <a href="/" class="logo" aria-label="click to go to the home page">
       <svg
@@ -71,7 +70,7 @@
 
     <nav aria-label="header navigation">
       <ul>
-        <li><a class="{{ 'active' if '' in page.fileSlug }}" href="/">Home</a></li>
+        <li><a class="{{ 'active' if '' == page.fileSlug }}" href="/">Home</a></li>
         <li><a class="{{ 'active' if 'about' in page.fileSlug }}" href="/about">About</a></li>
         <li><a class="{{ 'active' if 'services' in page.fileSlug }}" href="">Services</a></li>
         <li>
