@@ -1,3 +1,1 @@
-1) fix footer alignment
-2) rethink text placeholders
-3) dark mode
+1) split css into critical (preload), dark (preload) and style (defer)
