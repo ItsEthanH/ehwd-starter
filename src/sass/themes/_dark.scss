@@ -1,6 +1,37 @@
+@use '../utilities' as *;
+
 /*-- -------------------------- -->
-<---          Toggle            -->
+<---          Dark Mode         -->
 <--- -------------------------- -*/
 
-@media only screen and (min-width: 64rem) {
+@media only screen and (min-width: 0rem) {
+  body.dark-mode {
+    background: $darkModeNeutral;
+    color: $darkModeText;
+
+    header {
+      background: $darkModeDark;
+      box-shadow: $darkModeAccent 0px 8px 24px;
+
+      #hamburger {
+        span,
+        span:before,
+        span:after {
+          background-color: $darkModeText;
+        }
+      }
+
+      nav {
+        background: $darkModeDark;
+
+        a:not(.active, :hover) {
+          color: $darkModeText;
+        }
+      }
+    }
+
+    #footer {
+      background-color: $darkModeDark;
+    }
+  }
 }

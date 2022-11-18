@@ -37,7 +37,7 @@
       padding-top: 0;
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       background-color: #fff;
-      z-index: 10;
+      z-index: 3;
       transition: width 0.3s;
 
       ul {
@@ -46,7 +46,9 @@
         gap: calc(36 / 16) * 1rem;
         height: 100%;
         padding-top: calc(96 / 16) * 1rem;
+        padding-bottom: calc(32 / 16) * 1rem;
         padding-right: calc(24 / 16) * 1rem;
+        overflow-y: scroll;
       }
 
       li {
@@ -86,7 +88,7 @@
       background: transparent;
       transform: translateY(-50%);
       transition: top 0.3s;
-      z-index: 100;
+      z-index: 4;
       cursor: pointer;
 
       span {
@@ -126,7 +128,8 @@
     &.open {
       #hamburger {
         span {
-          background-color: transparent;
+          // the only time I will use !important - stops flickering of hamburger when switch dark/light mode
+          background-color: transparent !important;
           &:before,
           &:after {
             top: 50%;
@@ -189,6 +192,20 @@
     }
     #hamburger {
       right: calc(16 / 16) * 1rem;
+
+      span,
+      span:before,
+      span:after {
+        height: 3px;
+        width: calc(28 / 16) * 1rem;
+      }
+
+      span:before {
+        top: -8px;
+      }
+      span:after {
+        top: 8px;
+      }
     }
   }
 }
@@ -206,7 +223,6 @@
     align-items: center;
     height: calc(100 / 16) * 1rem;
     padding: 0;
-    z-index: 200000;
     transition: 0.3s;
 
     .background-color-div {
@@ -247,7 +263,6 @@
         position: relative;
         font-size: calc(19 / 16) * 1rem;
         color: $neutralDark;
-        z-index: 1;
         transition: color 0.3s;
       }
     }
@@ -268,10 +283,6 @@
     &.scrolled {
       background: $neutralDark;
 
-      &,
-      & * {
-      }
-
       .logo svg {
         fill: $neutralLight;
       }
@@ -291,7 +302,14 @@
 <---    Shared Header Styles    -->
 <--- -------------------------- -*/
 @media only screen and (min-width: 0rem) {
-  header nav a.active {
+  header {
+    font-family: 'Roboto', 'Arial', sans-serif;
+
+    z-index: 2;
+  }
+
+  header nav a.active,
+  header nav a:hover {
     // for specificity
     color: $primary;
   }
@@ -322,13 +340,11 @@
     }
 
     .moon {
-      z-index: 5;
       transition: transform 0.3s, opacity 0.3s, fill 0.3s;
       fill: #000; // --> change the color of the moon graphic based on the background being lighter or darker
     }
 
     .sun {
-      z-index: 4;
       transform: translate(-50%, 100%);
       opacity: 0;
       transition: transform 0.3s, opacity 0.3s;
