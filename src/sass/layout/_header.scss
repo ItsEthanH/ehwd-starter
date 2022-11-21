@@ -41,6 +41,10 @@ header {
     text-decoration: none;
   }
 
+  .active {
+    color: red;
+  }
+
   // on scroll, change background
   &.scrolled {
     background: $clr-black-900;
