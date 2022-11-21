@@ -2,9 +2,79 @@
 @use '../base/' as *;
 
 /*-- -------------------------- -->
+<---    Shared Header Styles    -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0em) {
+  header {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    z-index: 2;
+
+    nav a.active,
+    nav a:hover {
+      // for specificity
+      color: $primary;
+    }
+
+    a {
+      transition: all 0.3s ease;
+    }
+  }
+  #dark-mode-toggle {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: calc(60 / 16) * 1rem;
+    width: calc(48 / 16) * 1rem;
+    height: calc(48 / 16) * 1rem;
+    background: transparent;
+    border: none;
+    overflow: hidden;
+    padding: 0;
+    cursor: pointer;
+
+    img,
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: calc(25 / 16) * 1rem;
+      height: calc(25 / 16) * 1rem;
+      pointer-events: none;
+    }
+
+    .moon {
+      transition: transform 0.3s, opacity 0.3s, fill 0.3s;
+      fill: #000; // --> change the color of the moon graphic based on the background being lighter or darker
+    }
+
+    .sun {
+      transform: translate(-50%, 100%);
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+  }
+
+  body.dark-mode {
+    #dark-mode-toggle {
+      .sun {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+
+      .moon {
+        transform: translate(-50%, -150%);
+        opacity: 0;
+      }
+    }
+  }
+}
+
+/*-- -------------------------- -->
 <---        Mobile Header       -->
 <--- -------------------------- -*/
-@media only screen and (max-width: 64rem) {
+@media only screen and (max-width: 64em) {
   header {
     position: sticky;
     top: 0;
@@ -19,10 +89,10 @@
 
     .logo {
       display: inline-block;
-      height: calc(30 / 16) * 1rem;
+      height: 100%;
       width: auto;
 
-      svg {
+      img {
         width: auto;
         height: 100%;
       }
@@ -79,7 +149,7 @@
     #hamburger {
       position: absolute;
       top: 50%;
-      right: 0;
+      right: 0.5rem;
       display: block;
       border: none;
       padding: 0;
@@ -187,16 +257,22 @@
     .container {
       padding: 2rem;
     }
+
+    nav ul {
+      padding-top: 8rem;
+    }
+
     #dark-mode-toggle {
       right: calc(76 / 16) * 1rem;
     }
+
     #hamburger {
-      right: calc(16 / 16) * 1rem;
+      right: calc(8 / 16) * 1rem;
 
       span,
       span:before,
       span:after {
-        height: 3px;
+        height: 2px;
         width: calc(28 / 16) * 1rem;
       }
 
@@ -221,9 +297,10 @@
     display: flex;
     width: 100%;
     align-items: center;
-    height: calc(100 / 16) * 1rem;
+    height: calc(112 / 16) * 1rem;
     padding: 0;
     transition: 0.3s;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
     .background-color-div {
       height: 100%;
@@ -241,8 +318,15 @@
     }
 
     .logo {
+      display: inline-block;
       width: auto;
+      height: 100%;
       margin-right: auto;
+
+      img {
+        width: auto;
+        height: 100%;
+      }
     }
 
     nav {
@@ -261,9 +345,9 @@
 
       a {
         position: relative;
-        font-size: calc(19 / 16) * 1rem;
+        font-size: $fs-p;
         color: $neutralDark;
-        transition: color 0.3s;
+        transition: all 0.3s ease;
       }
     }
 
@@ -278,90 +362,6 @@
 
     #hamburger {
       display: none;
-    }
-
-    &.scrolled {
-      background: $neutralDark;
-
-      .logo svg {
-        fill: $neutralLight;
-      }
-
-      nav a {
-        color: $neutralLight;
-      }
-
-      #dark-mode-toggle svg {
-        fill: $neutralLight;
-      }
-    }
-  }
-}
-
-/*-- -------------------------- -->
-<---    Shared Header Styles    -->
-<--- -------------------------- -*/
-@media only screen and (min-width: 0rem) {
-  header {
-    font-family: 'Roboto', 'Arial', sans-serif;
-
-    z-index: 2;
-  }
-
-  header nav a.active,
-  header nav a:hover {
-    // for specificity
-    color: $primary;
-  }
-
-  #dark-mode-toggle {
-    display: block;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: calc(60 / 16) * 1rem;
-    width: calc(48 / 16) * 1rem;
-    height: calc(48 / 16) * 1rem;
-    background: transparent;
-    border: none;
-    overflow: hidden;
-    padding: 0;
-    cursor: pointer;
-
-    img,
-    svg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: calc(25 / 16) * 1rem;
-      height: calc(25 / 16) * 1rem;
-      pointer-events: none;
-    }
-
-    .moon {
-      transition: transform 0.3s, opacity 0.3s, fill 0.3s;
-      fill: #000; // --> change the color of the moon graphic based on the background being lighter or darker
-    }
-
-    .sun {
-      transform: translate(-50%, 100%);
-      opacity: 0;
-      transition: transform 0.3s, opacity 0.3s;
-    }
-  }
-
-  body.dark-mode {
-    #dark-mode-toggle {
-      .sun {
-        transform: translate(-50%, -50%);
-        opacity: 1;
-      }
-
-      .moon {
-        transform: translate(-50%, -150%);
-        opacity: 0;
-      }
     }
   }
 }
