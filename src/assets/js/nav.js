@@ -1,6 +1,5 @@
 // elements
 const header = document.getElementsByTagName('header')[0];
-const backdrop = document.getElementById('backdrop');
 const body = document.body.style;
 
 // mobile menu functionality
@@ -8,15 +7,20 @@ function toggleMenu() {
   // closing the nav
   if (header.classList.contains('open')) {
     header.classList.remove('open');
-    backdrop.style.display = 'none';
     body.overflowY = 'visible';
   }
 
   // opening the nav
   else {
     header.classList.add('open');
-    backdrop.style.display = 'block';
     body.overflowY = 'hidden';
+  }
+}
+
+// closes the navigation on dark background click
+function backgroundClose(event) {
+  if (event.target.localName === 'nav') {
+    toggleMenu();
   }
 }
 
@@ -31,5 +35,5 @@ function changeNavBackground() {
 
 // listeners
 document.getElementById('hamburger').addEventListener('click', toggleMenu);
-document.getElementById('backdrop').addEventListener('click', toggleMenu);
+document.getElementsByTagName('nav')[0].addEventListener('click', backgroundClose);
 document.addEventListener('scroll', changeNavBackground);

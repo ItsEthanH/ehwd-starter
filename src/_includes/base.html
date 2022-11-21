@@ -4,12 +4,48 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+    <link rel="canonical" href="https://www.company.com/{{page.fileSlug}}" />
+
     <meta name="description" content="{{ description }}" />
-    <title>{{ title }}</title>
+    <meta name="keywords" content="" />
+
+    <!--Social Media Display-->
+    <meta property="og:title" content="COMPANY NAME | {{ title }} | TOWN AND COUNTY" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.company.com/{{page.fileSlug}}" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:secure_url" content="" />
+
+    <!--Favicons-->
+    <!--Use https://realfavicongenerator.net/ to generate and download your favicons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="" />
+    <link rel="icon" type="image/png" sizes="32x32" href="" />
+    <link rel="icon" type="image/png" sizes="16x16" href="" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
+
+    <!-- Preload content above fold & fonts -->
+    <link rel="preload" as="image" href="/images/cabinets2-m.jpg" />
+    <link rel="preload" as="font" type="font/woff2" href="fonts/roboto-v29-latin-regular.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="fonts/roboto-v29-latin-700.woff2" crossorigin />
 
     <link rel="stylesheet" href="/css/style.css" />
-    <script src="./assets/js/app.js" defer></script>
+    <script src="/assets/js/nav.js" defer></script>
+    <script src="/assets/js/dark.js" defer></script>
+
+    <!--Defer loading the whole page css-->
+    <link rel="stylesheet" href="" media="print" onload="this.media='all'; this.onload=null;" />
+
+    <!--If the user has javascript disbaled, load this stylesheet-->
+    <noscript>
+      <link rel="stylesheet" href="" />
+    </noscript>
+
+    <!-- For index.html, title should be what they do. Other pages, title should be page name -->
+    <title>COMPANY NAME | {{ title }} | TOWN AND COUNTY</title>
   </head>
+
   <body>
     {% include "header.html" %}
     <main id="main">{{ content | safe }}</main>

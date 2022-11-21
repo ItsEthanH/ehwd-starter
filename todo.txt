@@ -1,0 +1,1 @@
+1) split css into critical (preload), dark (preload) and style (defer)

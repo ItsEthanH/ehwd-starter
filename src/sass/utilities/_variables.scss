@@ -1,6 +1,16 @@
 // colours
-$clr-black-900: black;
-$clr-black-100: white;
+$primaryLight: #ffd675;
+$primary: #ffba19;
+$primaryDark: #805d0d;
+
+$neutralLight: #f3f3f3;
+$neutral: #676768;
+$neutralDark: #1c1c1c;
+
+$darkModeAccent: #404040;
+$darkModeNeutral: #282828;
+$darkModeDark: #121212;
+$darkModeText: #fafbfc;
 
 // mobiles sizes
 $fs-h1: 3.5rem;
@@ -13,9 +23,3 @@ $fs-p: 1rem;
 
 // animations
 $nav-animation-duration: 0.6s;
-
-// breakpoints
-$bp-phone: 568px;
-$bp-tablet: 768px;
-$bp-small-desktop: 1024px;
-$bp-desktop: 1300px;
