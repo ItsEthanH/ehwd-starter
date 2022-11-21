@@ -6,7 +6,7 @@
   "author": "5t3ph",
   "scripts": {
     "watch:sass": "sass --watch src/sass:public/css",
-    "build:sass": "sass src/sass:public/css",
+    "build:sass": "sass --style=compressed src/sass:public/css",
     "watch:eleventy": "eleventy --serve",
     "build:eleventy": "eleventy",
     "start": "npm-run-all build:sass --parallel watch:*",
