@@ -90,7 +90,7 @@
     /* Navigation Links */
     .nav {
       padding: 0;
-      margin: 0;
+      margin: 0 auto;
     }
 
     .nav-li {
@@ -150,9 +150,8 @@
 
     /* Contact Links */
     .contact {
-      margin: 0;
+      margin: 0 auto;
       padding: 0;
-      width: 35%;
     }
 
     .contact-li {
@@ -183,26 +182,6 @@
   }
 }
 
-/* Tablet - 768px */
-@media only screen and (min-width: 48em) {
-  #footer {
-    .container {
-      max-width: calc(1280 / 16) * 1em;
-      row-gap: 0;
-    }
-
-    .contact {
-      flex-direction: row;
-      justify-content: space-between;
-      border-top: none;
-    }
-
-    .contact-li {
-      margin: 0;
-    }
-  }
-}
-
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64em) {
   #footer {
@@ -210,6 +189,7 @@
       /* pushes all flex children to the top */
       align-items: flex-start;
       justify-content: flex-end;
+      max-width: calc(1280 / 16) * 1em;
     }
 
     .logo-group {
@@ -229,6 +209,11 @@
       top: auto;
       right: auto;
       bottom: 0;
+    }
+
+    .nav,
+    .contact {
+      margin: 0;
     }
 
     .contact {
