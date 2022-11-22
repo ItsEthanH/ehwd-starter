@@ -58,7 +58,6 @@ header {
       padding-top: calc(96 / 16) * 1rem;
       padding-bottom: calc(32 / 16) * 1rem;
       padding-right: calc(24 / 16) * 1rem;
-      overflow-y: scroll;
     }
 
     li {
@@ -148,6 +147,8 @@ header {
     }
 
     &.open {
+      overflow-y: scroll;
+
       #hamburger {
         span {
           background-color: transparent;
