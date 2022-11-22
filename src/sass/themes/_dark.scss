@@ -1,10 +1,75 @@
 @use '../utilities' as *;
 
 /*-- -------------------------- -->
+<---  Dark Mode Toggle Button   -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  #dark-mode-toggle {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: calc(60 / 16) * 1rem;
+    width: calc(48 / 16) * 1rem;
+    height: calc(48 / 16) * 1rem;
+    background: transparent;
+    border: none;
+    overflow: hidden;
+    padding: 0;
+    cursor: pointer;
+
+    img,
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    img {
+      width: calc(25 / 16) * 1rem;
+      height: calc(25 / 16) * 1rem;
+    }
+
+    .moon {
+      transition: transform 0.3s, opacity 0.3s, fill 0.3s;
+      fill: #000; // --> change the color of the moon graphic based on the background being lighter or darker
+    }
+
+    .sun {
+      transform: translate(-50%, 100%);
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+  }
+}
+
+@media only screen and (min-width: 64rem) {
+  #dark-mode-toggle {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    margin-left: 1.875em;
+    margin-bottom: 0em;
+  }
+}
+
+/*-- -------------------------- -->
 <---          Dark Mode         -->
 <--- -------------------------- -*/
+@media only screen and (min-width: 0em) {
+  // for a smoother dark mode transition, add the selector into the list.
+  // this stops overlapping transitions
+  body {
+    &,
+    header,
+    footer {
+      transition: all 0.3s ease;
+    }
+  }
 
-@media only screen and (min-width: 0rem) {
   body.dark-mode {
     background: $darkModeNeutral;
     color: $darkModeText;
@@ -13,6 +78,26 @@
       background: $darkModeDark;
       box-shadow: $darkModeAccent 0px 8px 24px;
 
+      a:not(.active, :hover) {
+        color: $darkModeText;
+      }
+
+      nav {
+        background: $darkModeDark;
+      }
+
+      #dark-mode-toggle {
+        .sun {
+          transform: translate(-50%, -50%);
+          opacity: 1;
+        }
+
+        .moon {
+          transform: translate(-50%, -150%);
+          opacity: 0;
+        }
+      }
+
       #hamburger {
         span,
         span:before,
@@ -20,18 +105,21 @@
           background-color: $darkModeText;
         }
       }
-
-      nav {
-        background: $darkModeDark;
-
-        a:not(.active, :hover) {
-          color: $darkModeText;
-        }
+      &.open #hamburger span {
+        background: transparent;
       }
     }
 
     #footer {
       background-color: $darkModeDark;
+    }
+  }
+}
+
+@media only screen and (min-width: 64em) {
+  body.dark-mode {
+    header nav {
+      background-color: transparent;
     }
   }
 }
