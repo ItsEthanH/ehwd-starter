@@ -144,8 +144,11 @@ header {
       height: 100vh;
       width: 100vw;
     }
+  }
+  body.open {
+    overflow-y: hidden;
 
-    &.open {
+    header {
       overflow-y: scroll;
 
       #hamburger {
