@@ -1,6 +1,7 @@
 // imports
-const Image = require('@11ty/eleventy-img');
 const path = require('path');
+const Image = require('@11ty/eleventy-img');
+const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 
 // creates a shortcode for responsive, optimised images.
 async function imageShortcode(src, alt, className, loading, sizes = '(max-width: 64em) 400px, 600px') {
@@ -11,7 +12,7 @@ async function imageShortcode(src, alt, className, loading, sizes = '(max-width:
 
   // use the 11ty image plugin to generate a set of images using defined widths.
   let metadata = await Image(src, {
-    widths: [250, 400, 600],
+    widths: [250, 600],
     formats: ['webp', 'jpeg'],
     urlPath: '/images/',
     outputDir: './public/images',
@@ -51,11 +52,15 @@ module.exports = function (eleventyConfig) {
 
   // watch CSS files for changes - doesn't trigger 11ty rebuild
   eleventyConfig.setBrowserSyncConfig({
+    open: true,
     files: './public/css/**/*.css',
   });
 
   // allows the {% image %} shortcode to be used for optimised iamges (in webp if possible)
   eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
+
+  // utilises the navigation plugin for easier, more scalable navigations
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   return {
     dir: {

@@ -61,15 +61,14 @@
       </svg>
     </a>
 
+    {% set navPages = collections.all | eleventyNavigation %}
     <nav aria-label="header navigation">
       <ul>
-        <li><a class="{{ 'active' if '' == page.fileSlug }}" href="/">Home</a></li>
-        <li><a class="{{ 'active' if 'about' in page.fileSlug }}" href="/about">About</a></li>
-        <li><a class="{{ 'active' if 'services' in page.fileSlug }}" href="">Services</a></li>
+        {%- for entry in navPages %}
         <li>
-          <a class="{{ 'active' if 'testimonials' in page.fileSlug }}" href="">Testimonials</a>
+          <a {% if entry.url == page.url %} class="active" {% endif %} href="{{ entry.url }}"> {{ entry.key }} </a>
         </li>
-        <li><a class="{{ 'active' if 'contact' in page.fileSlug }}" href="">Contact</a></li>
+        {%- endfor %}
       </ul>
     </nav>
 
