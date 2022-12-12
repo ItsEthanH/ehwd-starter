@@ -12,14 +12,14 @@ $darkModeNeutral: #282828;
 $darkModeDark: #121212;
 $darkModeText: #fafbfc;
 
-// mobiles sizes
-$fs-h1: 3.5rem;
-$fs-h2: 3rem;
-$fs-h3: 2.5rem;
-$fs-h4: 2rem;
-$fs-h5: 1.5rem;
-$fs-h6: 1.25rem;
-$fs-p: 1rem;
+// font sizes - thanks to https://utopia.fyi/type/calculator
+$fs-h1: clamp(2.43rem, calc(0.63rem + 4.11vw), 3.82rem);
+$fs-h2: clamp(2.02rem, calc(0.69rem + 3.05vw), 3.05rem);
+$fs-h3: clamp(1.69rem, calc(0.7rem + 2.24vw), 2.44rem);
+$fs-h4: clamp(1.4rem, calc(0.69rem + 1.63vw), 1.95rem);
+$fs-h5: clamp(1.17rem, calc(0.66rem + 1.16vw), 1.56rem);
+$fs-h6: clamp(0.98rem, calc(0.62rem + 0.81vw), 1.25rem);
+$fs-p: clamp(0.81rem, calc(0.57rem + 0.56vw), 1rem);
 
 // animations
 $nav-animation-duration: 0.6s;

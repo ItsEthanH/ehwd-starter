@@ -1,0 +1,20 @@
+{
+  "name": "Valley Digital",
+  "email": "hello@valleydigital.com",
+  "phone": "+447123456789",
+  "phoneFormatted": "07123 456789",
+  "address": {
+    "lineOne": "Number 1, Test Heights",
+    "lineTwo": "Sample Street",
+    "city": "Testown",
+    "county": "Hampshire",
+    "postcode": "AA11 AAA",
+    "mapLink": "https://www.google.com/maps/place/Big+Ben/@51.5007325,-0.1268141,17z/data=!3m1!4b1!4m5!3m4!1s0x487604c38c8cd1d9:0xb78f2474b9a45aa9!8m2!3d51.5007292!4d-0.1246254"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com",
+    "instagram": "https://www.instagram.com",
+    "google": "https://www.google.com"
+  },
+  "domain": "www.valleydigital.com"
+}
