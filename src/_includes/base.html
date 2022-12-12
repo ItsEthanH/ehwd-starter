@@ -42,7 +42,10 @@
     <link rel="stylesheet" href="/css/critical-styles.css" />
 
     <!-- For index.html, title should be what they do. Other pages, title should be page name -->
-    <title>{{ client.name }} | {{ title }} | {{ client.address.city }}, {{ client.address.county }}</title>
+    <title>
+      {% if page.url == '/'%} {{ client.name }} | {{ title }} | {{ client.address.city }}, {{ client.address.county }}
+      {% else %} {{ title }} | {{ client.name }} {% endif %}
+    </title>
   </head>
 
   <body>
