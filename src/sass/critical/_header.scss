@@ -207,7 +207,7 @@ header {
 <--- -------------------------- -*/
 @media only screen and (min-width: 64em) {
   header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     display: flex;
