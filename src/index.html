@@ -76,20 +76,25 @@ eleventyNavigation:
   <li>Create a html file in pages/ for each page desired. Use the same frontmatter template for each page.</li>
   <li>
     Use <a href="https://realfavicongenerator.net/">https://realfavicongenerator.net/</a> to create favicons. Place
-    result into _includes/base.html
+    result into _includes/base.html.
   </li>
   <li>
     Use <a href="https://gwfh.mranftl.com/fonts">https://gwfh.mranftl.com/fonts</a> to self host Google Fonts. Place
-    into /assets/fonts, and create necessary variables and text components
+    into /assets/fonts, and create necessary variables and text components.
   </li>
-  <li>Update colour variables in sass/utilities/_variables.scss</li>
+  <li>Update colour variables in sass/utilities/_variables.scss.</li>
   <li>
     Tweak header styles. Delete changeNavBackground and its corrosponding listener from /assets/js/nav.js if needed,
-    along with the scrolled class in sass/critical/_header.scss too
+    along with the scrolled class in sass/critical/_header.scss too.
+  </li>
+  <li>
+    Set the desired widths of images in .eleventy.js, line 15. Pick the largest width for mobile, tablet and pc. Set the
+    breakpoints accordinly in line 7 too. When an image needs to be used, use the generated shortcode to save time on
+    asset optimisation.
   </li>
   <li>
     Search the design throughly, and find anything that could be reused. Spacings can be turned into variables. Groups
     of elements can be turned into macros, with mixins for differing styles between a macro.
   </li>
-  <li>Clear index.html and sass/pages/_home.scss of any markup and styles. Begin</li>
+  <li>Clear index.html and sass/pages/_home.scss of any markup and styles. Begin!</li>
 </ol>
