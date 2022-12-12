@@ -23,27 +23,23 @@
 
     <!--Favicons-->
     <!--Use https://realfavicongenerator.net/ to generate and download your favicons-->
-    <link rel="apple-touch-icon" sizes="180x180" href="" />
-    <link rel="icon" type="image/png" sizes="32x32" href="" />
-    <link rel="icon" type="image/png" sizes="16x16" href="" />
-    <link rel="manifest" href="/assets/site.webmanifest" />
 
     <!-- Preload -->
-    <link rel="preload" as="image" href="{{ preload }}" />
+    <link rel="preload" as="image" href="/assets/images/{{ preload }}" />
     <link rel="preload" as="font" type="font/woff2" href="fonts/roboto-v29-latin-regular.woff2" crossorigin />
     <link rel="preload" as="font" type="font/woff2" href="fonts/roboto-v29-latin-700.woff2" crossorigin />
 
     <script src="/assets/js/nav.js" defer></script>
     <script src="/assets/js/dark.js" defer></script>
 
-    <!-- Only above the fold css & utilities -->
-    <link rel="stylesheet" href="/css/critical.css" />
-
     <!--Defer loading the whole page css. If js is disabled, load it without defering-->
     <link rel="stylesheet" href="/css/styles.css" media="print" onload="this.media='all'; this.onload=null;" />
     <noscript>
       <link rel="stylesheet" href="/css/styles.css" />
     </noscript>
+
+    <!-- Only above the fold css & utilities -->
+    <link rel="stylesheet" href="/css/critical-styles.css" />
 
     <!-- For index.html, title should be what they do. Other pages, title should be page name -->
     <title>{{ client.name }} | {{ title }} | {{ client.address.city }}, {{ client.address.county }}</title>
