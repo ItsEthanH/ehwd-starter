@@ -23,7 +23,7 @@
         nisl habitant. Consectetur pellentesque dignissim sed amet.
       </p>
       <div class="social">
-        <a class="social-link" aria-label="visit google profile" href="">
+        <a class="social-link" aria-label="visit google profile" href="{{ client.social.google }}">
           <img
             class="social-img"
             aria-hidden="true"
@@ -35,7 +35,7 @@
             height="11"
           />
         </a>
-        <a class="social-link" aria-label="visit facebook profile" href="">
+        <a class="social-link" aria-label="visit facebook profile" href="{{ client.social.facebook }}">
           <img
             class="social-img"
             aria-hidden="true"
@@ -47,7 +47,7 @@
             height="11"
           />
         </a>
-        <a class="social-link" aria-label="visit instagram profile" href="">
+        <a class="social-link" aria-label="visit instagram profile" href="{{ client.social.instagram }}">
           <img
             class="social-img"
             aria-hidden="true"
@@ -67,16 +67,16 @@
         <span class="header">Sitemap</span>
       </li>
       <li class="nav-li">
-        <a class="nav-link" href="">About</a>
+        <a class="nav-link" href="/about">About</a>
       </li>
       <li class="nav-li">
-        <a class="nav-link" href="">Services</a>
+        <a class="nav-link" href="/services">Services</a>
       </li>
       <li class="nav-li">
-        <a class="nav-link" href="">Portfolio</a>
+        <a class="nav-link" href="/testimonials">Testimonials</a>
       </li>
       <li class="nav-li">
-        <a class="nav-link" href="">Contact</a>
+        <a class="nav-link" href="/contact">Contact</a>
       </li>
     </ul>
     <ul class="nav">
@@ -84,16 +84,16 @@
         <span class="header">Services</span>
       </li>
       <li class="nav-li">
-        <a class="nav-link" href="">About</a>
+        <a class="nav-link" href="/about">About</a>
       </li>
       <li class="nav-li">
-        <a class="nav-link" href="">Services</a>
+        <a class="nav-link" href="/services">Services</a>
       </li>
       <li class="nav-li">
-        <a class="nav-link" href="">Portfolio</a>
+        <a class="nav-link" href="/testimonials">Testimonials</a>
       </li>
       <li class="nav-li">
-        <a class="nav-link" href="">Contact</a>
+        <a class="nav-link" href="/contact">Contact</a>
       </li>
     </ul>
     <!-- Contact Info -->
@@ -102,16 +102,18 @@
         <span class="header">Contact</span>
       </li>
       <li class="contact-li">
-        <a class="contact-link address" href="">
-          123 Avenue Street<br />
-          Oak Harbor, WA 98101
+        <a class="contact-link address" href="{{ client.address.mapLink }}">
+          {{ client.address.lineOne }}<br />
+          {{ client.address.lineTwo }}<br />
+          {{ client.address.city }}, {{ client.address.county }}<br />
+          {{ client.address.postcode }}
         </a>
       </li>
       <li class="contact-li">
-        <a class="contact-link" href="tel: 123-456-7890">(123) 456-7890</a>
+        <a class="contact-link" href="tel:{{ client.phone }}">{{ client.phoneFormatted }}</a>
       </li>
       <li class="contact-li">
-        <a class="contact-link" href="mailto:info@codestitch.com">info@codestitch.com</a>
+        <a class="contact-link" href="mailto:{{ client.email }}">{{ client.email }}</a>
       </li>
     </ul>
   </div>

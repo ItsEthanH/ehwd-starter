@@ -1,7 +1,31 @@
-.start {
-  list-style: decimal inside;
-}
+@use '../utilities' as *;
 
 main {
-  height: 70vh;
+  min-height: 70vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  h1 {
+    font-size: $fs-h1;
+  }
+  h2 {
+    font-size: $fs-h2;
+  }
+  h3 {
+    font-size: $fs-h3;
+  }
+  h4 {
+    display: inline;
+    font-size: $fs-h4;
+  }
+
+  ol {
+    list-style: decimal inside;
+  }
+
+  a {
+    color: $primaryDark;
+    text-decoration: underline;
+  }
 }
