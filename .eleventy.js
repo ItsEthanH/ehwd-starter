@@ -11,7 +11,7 @@ async function imageShortcode(src, alt, className, loading, sizes = '(max-width:
   }
 
   // use the 11ty image plugin to generate a set of images using defined widths.
-  let metadata = await Image(src, {
+  let metadata = await Image(`./src${src}`, {
     widths: [250, 600],
     formats: ['webp', 'jpeg'],
     urlPath: '/images/',
