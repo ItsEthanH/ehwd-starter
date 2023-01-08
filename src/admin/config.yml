@@ -1,0 +1,8 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: 'public/images/blog'
+public_folder: '/images/blog'
